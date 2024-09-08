@@ -134,29 +134,29 @@ return {
   --  render-markdown.nvim [normal mode markdown]
   --  https://github.com/MeanderingProgrammer/render-markdown.nvim
   --  While on normal mode, markdown files will display highlights.
-  {
-    'MeanderingProgrammer/render-markdown.nvim',
-    ft = { "markdown" },
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    opts = {
-      heading = {
-        sign = false,
-        icons = require("base.utils").get_icon("RenderMarkdown"),
-        width = "block",
-      },
-      code = {
-        sign = false,
-        width = 'block', -- use 'language' if colorcolumn is important for you.
-        right_pad = 1,
-      },
-      dash = {
-        width = 79
-      },
-      pipe_table = {
-        style = 'full', -- use 'normal' if colorcolumn is important for you.
-      },
-    },
-  },
+  -- {
+  --   'MeanderingProgrammer/render-markdown.nvim',
+  --   ft = { "markdown" },
+  --   dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  --   opts = {
+  --     heading = {
+  --       sign = false,
+  --       icons = require("base.utils").get_icon("RenderMarkdown"),
+  --       width = "block",
+  --     },
+  --     code = {
+  --       sign = false,
+  --       width = 'block', -- use 'language' if colorcolumn is important for you.
+  --       right_pad = 1,
+  --     },
+  --     dash = {
+  --       width = 79
+  --     },
+  --     pipe_table = {
+  --       style = 'full', -- use 'normal' if colorcolumn is important for you.
+  --     },
+  --   },
+  -- },
 
   --  checkmate.nvim [markdown toogle checks]
   --  https://github.com/bngarren/checkmate.nvim
