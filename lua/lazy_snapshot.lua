@@ -47,6 +47,7 @@ return {
   { "mason-org/mason.nvim", version = "^2" },
   { "mfussenegger/nvim-dap", version = "^1" },
   { "mikavilpas/yazi.nvim", version = "^99" },
+  { "max397574/better-escape.nvim", version = "2.3.2" },
   { "mrjones2014/smart-splits.nvim", version = "^1" },
   { "neovim/nvim-lspconfig", version = "^2" },
   { "nvim-cmp", commit = "106c4bcc053a5da783bf4a9d907b6f22485c2ea0" },
