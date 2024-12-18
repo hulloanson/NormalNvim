@@ -1,3 +1,8 @@
+if vim.g.vscode then
+  require("base.1-options")
+  return {}
+end
+
 -- HELLO, welcome to NormalNvim!
 -- ---------------------------------------
 -- This is the entry point of your config.
