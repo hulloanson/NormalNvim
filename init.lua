@@ -1,5 +1,7 @@
 if vim.g.vscode then
   require("base.1-options")
+  vim.o.cmdheight = 4
+  vim.o.relativenumber = true
   return {}
 end
 
