@@ -1,4 +1,61 @@
 **Important** : You need Neovim 0.12+
+## Updating (this fork)
+
+A full update has five layers, in order:
+
+### 1. Neovim itself
+
+```sh
+pacman -Syu neovim
+```
+
+Update this first — everything else depends on the Neovim runtime.
+
+### 2. Pull upstream distro changes
+
+```sh
+./scripts/update-fetch.sh   # adds upstream remote, fetches, shows incoming commits, prompts rebase
+# → open nvim and test that nothing is broken
+./scripts/update-push.sh    # commits any leftover changes, pushes to your origin
+```
+
+If the rebase has conflicts, resolve them, then `git rebase --continue`, then run `update-push.sh`.
+
+### 3. Update plugins (Lazy)
+
+This config uses a snapshot file (`lazy_snapshot.lua`) to pin plugin versions.
+
+| Goal | Command |
+|------|---------|
+| Install pinned versions from snapshot | `:Lazy restore` |
+| Update all plugins to latest and save new snapshot | `:Lazy update` then `:Lazy snapshot` (or `:DistroFreezePluginVersions`) |
+| Update a single plugin | `:Lazy update <plugin-name>` |
+
+After updating plugins, check `:Lazy log` for breaking changes and test nvim.
+
+### 4. Update Treesitter parsers
+
+```
+:TSUpdate
+```
+
+Treesitter parsers are separate from plugins — they provide language-specific syntax trees for highlighting, indentation, and more. Keybinding: `<leader>pT`.
+
+### 5. Update Mason tools (LSPs, formatters, linters)
+
+Mason-managed tools (language servers, formatters, linters) are independent of Lazy plugins.
+
+| Goal | Command |
+|------|---------|
+| Check for outdated tools | `:Mason` → press `U` |
+| Update all tools at once | `:MasonUpdate` |
+
+> Mason tools are not version-pinned, so updating them is lower risk but can occasionally introduce breaking changes in LSP behaviour.
+
+---
+<!-- upstream README below -->
+
+**Important** : You need Neovim 0.10+
 
 <div align="center">
   <img src="https://github.com/NormalNvim/NormalNvim/assets/3357792/76197752-0947-4392-a6bd-a59d64319028"></img>

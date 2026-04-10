@@ -4,7 +4,7 @@
 -- ----------------------------------------
 
 -- Theme
-base.default_colorscheme = "astrolight"
+vim.g.default_colorscheme = "astrolight"
 
 -- Options --------------------------------------------------------------------
 vim.opt.breakindent = true -- Wrap indent to match  line start.
